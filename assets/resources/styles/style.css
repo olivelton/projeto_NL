@@ -1,4 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhaijaan');
+
 .lobster {
     font-family: 'Lobster', cursive;
+}
+
+.font-baloo {
+    font-family: 'Baloo Bhaijaan', cursive;
+}
+
+.h-heigth {
+    height: 150px;
+}
+
+.logo-tam {
+    height: 100px;
+    width: 200px;
+}
+
+.loginBack {
+    background-color: black;
 }
