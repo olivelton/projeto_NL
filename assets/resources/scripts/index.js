@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    $('.modal').modal();
+    $('select').formSelect();
     M.updateTextFields();
 
     $('.sidenav').sidenav();

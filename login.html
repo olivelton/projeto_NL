@@ -83,12 +83,56 @@
                             <a href="registrar.html" class="blue-text text-darken-4 font-baloo ">Registrar</a>
                         </div>
                         <div class="col s8 right-align">
-                            <a href="recuperasenha.html" class="blue-text text-darken-4 font-baloo ">Esqueci a senha</a>
+                            <a href="#" id="link-esqueci-senha" class="blue-text text-darken-4 font-baloo ">Esqueci a senha</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
+        <!--modal recuperar senha-->
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+
+            <div class="container">
+                <div>
+                    <h3 class="grey-text text-darken-3 font-baloo center">Esqueci a senha</h3>
+                </div>
+                <div class="row">
+                    <form class="col s12" action=" return onsubmit()">
+                        <h4 class="black-text text-lighten-1 font-baloo"> Entre com o E mail cadastrado</h4>
+                        <!-- entrada de e-mail-->
+                        <div class="row">
+                            <div class="input-field col s12 m12">
+                                <input id="email-solcita-senha" type="email" class="validate" autofocus>
+                                <label for="email-solicita-senha" class="black-text text-lighten-1 font-baloo">Email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m12">
+                                <button id="btn-solicita-senha" class="blue waves-effect waves-light btn center-align"><i class="material-icons left">build</i>Recuperar Senha</button>
+
+                            </div>
+                        </div>
+                        <!-- entrada de e mail -->
+                    </form>
+                </div>
+            </div>
+
+
+            <div id="div-solicita-senha" class="container ">
+                <p class="red-text text-lighten-1 font-baloo hide">
+                    Senha solicitada com sucesso verifique seu e E-Mail e siga os passos la indicados
+                </p>
+            </div>
+        </div>
+        <!--modal recuperar senha-->
+
+
+
+
+
     </main>
 
 
@@ -104,6 +148,7 @@
     <!-- <script src="assets/libraries/materialize/js/materialize.min.js"></script>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="assets/resources/scripts/index.js"></script>
+
 </body>
 
 </html>

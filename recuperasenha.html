@@ -11,7 +11,7 @@
 <link type="text/css" rel="stylesheet" href="/assets/libraries/materialize/css/materialize.min.css" media="screen,projection" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<body class="loginBack">
+<body class="cadBack">
     <!--navbar-->
     <div class="navbar-fixed">
         <nav>
@@ -42,12 +42,46 @@
     <!--navbar-->
 
     <main>
-        recuperar a senha vai aqui
+        <div class="container">
+            <div>
+                <h3 class="grey-text text-darken-3 font-baloo center">Esqueci a senha</h3>
+            </div>
+            <div class="row">
+                <form class="col s12" action=" return onsubmit()">
+                    <h4 class="black-text text-lighten-1 font-baloo"> Entre com o E mail cadastrado</h4>
+                    <!-- entrada de e-mail-->
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <input id="email-solcita-senha" type="email" class="validate">
+                            <label for="email-solicita-senha" class="black-text text-lighten-1 font-baloo">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <button id="btn-solicita-senha" class="blue waves-effect waves-light btn"><i class="material-icons left">build</i>Recuperar Senha</button>
+
+                        </div>
+                    </div>
+                    <!-- entrada de e mail -->
+                </form>
+            </div>
+        </div>
+
+
+        <div id="div-solicita-senha" class="container hide">
+            <p class="red-text text-lighten-1 font-baloo">
+                Senha solicitada com sucesso verifique seu e E-Mail e siga os passos la indicados
+            </p>
+        </div>
+
+
+
+
+
     </main>
 
-
     <!-- footer -->
-    <footer class="section grey lighten-3 blue-text center">
+    <footer class="section grey lighten-3 blue-text center footer-fixado">
         <p class="blue-text text-darken-3 font-baloo">Nova Lógica &copy; 2018</p>
 
 
