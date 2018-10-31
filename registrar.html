@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Nova Lógica Informática/login</title>
+</head>
+
+<link type="text/css" rel="stylesheet" href="assets/resources/styles/style.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="/assets/libraries/materialize/css/materialize.min.css" media="screen,projection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<body class="cadBack">
+    <!--navbar-->
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper  grey lighten-3  ">
+                <a href="index.html" class="brand-logo lobster ">
+                    <img src="assets/resources/images/logosemfundo.png" class="responsive-img logo-tam">
+                </a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons grey lighten-1">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down ">
+                    <li><a href="index.html" class=" blue-text text-darken-3 font-baloo">Ínicio</a></li>
+                    <li><a href="index.html#quem-somos" class=" blue-text text-darken-3 font-baloo"> Quem Somos</a></li>
+                    <li><a href="index.html#servicos" class=" blue-text text-darken-3 font-baloo">Serviços</a></li>
+                    <li><a href="index.html#contato" class=" blue-text text-darken-3 font-baloo">contato</a></li>
+                    <li><a href="login.html" class=" blue-text text-darken-3 font-baloo">Area do Cliente</a></li>
+                </ul>
+            </div>
+        </nav>
+
+    </div>
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="index.html" class=" blue-text text-darken-3 font-baloo">Ínicio</a></li>
+        <li><a href="index.html#quem-somos" class=" blue-text text-darken-3 font-baloo"> Quem Somos</a></li>
+        <li><a href="index.html#servicos" class=" blue-text text-darken-3 font-baloo">Serviços</a></li>
+        <li><a href="index.html#contato" class=" blue-text text-darken-3 font-baloo">contato</a></li>
+        <li><a href="login.html" class=" blue-text text-darken-3 font-baloo">Area do Cliente</a></li>
+    </ul>
+
+    <!--navbar-->
+
+    <main>
+        <div class="container">
+            <div>
+                <h3 class="grey-text text-darken-3 font-baloo center">Preencha seu Cadastro abaixo</h3>
+            </div>
+            <div>
+                <h4 class="grey-text text-darken-3 font-baloo left">Dados Pessoais</h4>
+            </div>
+            <div class="row">
+                <form class="col s12" action=" return onsubmit()">
+
+                    <!-- dados pessoais-->
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <input id="input-nome" type="text" class="validate" autofocus>
+                            <label for="input-nome" class="black-text text-lighten-1 font-baloo">Nome</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <input id="input-sobrenome" type="text" class="validate">
+                            <label for="input-sobrenome" class="black-text text-lighten-1 font-baloo">Sobrenome</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <input id="input-cpf" type="number" class="validate">
+                            <label class="black-text text-lighten-1 font-baloo" for="input-cpf">CPF</label>
+                        </div>
+                        <div class="s12 m6">
+                            <p class="black-text text-lighten-1 font-baloo">Sexo</p>
+                            <label>
+                                <input class="with-gap" name="sexo" type="radio" value="M">
+                                <span class="black-text text-lighten-1 font-baloo">Masculino</span>
+                            </label>
+
+
+                            <label>
+                                <input class="with-gap" name="sexo" type="radio" value="F" />
+                                <span class="black-text text-lighten-1 font-baloo">Feminino</span>
+                            </label>
+
+                            <label>
+                                <input class="with-gap" name="sexo" type="radio" value="O" />
+                                <span class="black-text text-lighten-1 font-baloo">Outro</span>
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <input id="email" type="email" class="validate">
+                            <label for="email" class="black-text text-lighten-1 font-baloo">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <input id="input-senha" type="password" class="validate">
+                            <label for="input-senha" class="black-text text-lighten-1 font-baloo">Senha</label>
+
+                        </div>
+
+                        <div class="input-field col s12 m6">
+                            <input id="input-senha-confirma" type="password">
+                            <label id="lbl-senha-confirma" for="input-senha-confirma" data-error="Password not match" data-success="Password Match" class="black-text text-lighten-1 font-baloo">Confirmação da senha</label>
+                        </div>
+                    </div>
+                    <!-- dados pessoais-->
+
+
+                    <!-- dados de endereço-->
+                    <div class="row">
+                        <h4 class="grey-text text-darken-3 font-baloo left">Endereço</h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <input id="input-Rua" type="text" class="validate">
+                            <label for="input-Rua" class="black-text text-lighten-1 font-baloo">Rua</label>
+                        </div>
+
+                        <div>
+                            <div class="s12 m6">
+                                <label>
+                                    <input type="checkbox" />
+                                    <span class="black-text text-lighten-1 font-baloo">S/N</span>
+                                </label>
+                                <div class="input-field col s3 m3 ">
+                                    <input id="input-numero" type="number" class="validate ">
+                                    <label class="black-text text-lighten-1 font-baloo " for="input-numero">numero</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="input-field col s12 m6">
+                            <input id="input-cidade" type="text" class="validate">
+                            <label for="input-cidade" class="black-text text-lighten-1 font-baloo">Cidade</label>
+                        </div>
+                        <div class="input-field col s3 m3">
+                            <input id="input-uf" type="text" class="validate" maxlength="2">
+                            <label class="black-text text-lighten-1 font-baloo" for="input-uf">UF</label>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <input id="input-cep" type="number" maxlength="8" class="validate">
+                            <label for="input-cep" class="black-text text-lighten-1 font-baloo">CEP</label>
+
+                        </div>
+
+                    </div>
+                    <!-- dados de endereço-->
+
+
+
+
+
+
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <button id="cadastrar" class="blue waves-effect waves-light btn"><i class="material-icons left">person_add</i>Cadastrar</button>
+
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- footer -->
+    <footer class="section grey lighten-3 blue-text center">
+        <p class="blue-text text-darken-3 font-baloo">Nova Lógica &copy; 2018</p>
+
+
+    </footer>
+    <!-- footer -->
+    <!--<script src="assets/libraries/jquery/jquery-3.3.1.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script src="assets/libraries/materialize/js/materialize.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="assets/resources/scripts/index.js"></script>
+</body>
+
+</html>
