@@ -1,5 +1,9 @@
 $(document).ready(function () {
+
+
+    // M.textareaAutoResize($('#textarea-contato'));
     $('.modal').modal();
+
     $('select').formSelect();
     M.updateTextFields();
 
