@@ -162,7 +162,7 @@
                                 <p>Trabalhamos com Assistencia Tecnica nos mais Diversos segmentos Tecnológicos</p>
                             </div>
                             <div class="card-action">
-                                <a href="#">Saiba Mais</a>
+                                <a id="saibamais-suporte" href="#">Saiba Mais</a>
                             </div>
                         </div>
                     </div>
@@ -179,7 +179,9 @@
                                 <p>Trabalhamos no segmento de redes de Computadores desde projeção atá manutenção </p>
                             </div>
                             <div class="card-action">
-                                <a href="#">Saiba Mais</a>
+                                <!--abre um modal explicando sobre o card verificar modal redes abaixo -->
+                                <a id="saibamais-redes" href="#">Saiba Mais</a>
+
                             </div>
                         </div>
                     </div>
@@ -198,7 +200,7 @@
                                 <p>oferecemos alguns serviços de Marketing digital produção e ediçaõ de material</p>
                             </div>
                             <div class="card-action">
-                                <a href="#">Saiba Mais</a>
+                                <a id="saibamais-marketing" href="#">Saiba Mais</a>
                             </div>
                         </div>
                     </div>
@@ -223,7 +225,7 @@
                                 <p>trabalhamos com instalação de Cameras e alarmes residenciais e empresariais</p>
                             </div>
                             <div class="card-action">
-                                <a href="#">Saiba Mais</a>
+                                <a id="saibamais-monitoramento" href="#">Saiba Mais</a>
                             </div>
                         </div>
                     </div>
@@ -240,7 +242,7 @@
                                 <p>Prestamos serviços artiticos como DJ Banda e sonorização de qualidade</p>
                             </div>
                             <div class="card-action">
-                                <a href="#">Saiba Mais</a>
+                                <a id="saibamais-musical" href="#">Saiba Mais</a>
                             </div>
                         </div>
                     </div>
@@ -258,7 +260,7 @@
                                 <p>Prestamos assistencia a eventos tais como divulgação e assessoria, visando sucesso na sua festa</p>
                             </div>
                             <div class="card-action">
-                                <a href="#">Saiba Mais</a>
+                                <a id="saibamais-eventos" href="#">Saiba Mais</a>
                             </div>
                         </div>
                     </div>
@@ -317,7 +319,7 @@
                                     <div class="col s12 m6 l6">
                                         <div class="input-field">
                                             <input id="input-contato-retorno" name="input-contato-retorno" class="white" type="text" />
-                                            <span id="alerta-input-contato-retorno" class="red-text hide">preencha este campo</span>
+                                            <span id="alerta-input-contato-retorno" class="validate red-text hide">preencha este campo</span>
                                             <label for="input-contato-retorno" class="blue-text text-darken-4 font-baloo "><i class="material-icons left">contacts</i>Contato Para Retorno</label>
 
                                         </div>
@@ -344,15 +346,18 @@
                     </span>
                 </div>
             </div>
-        </div> <!-- fim section contato-->
+        </div>
+        <!-- fim section contato-->
 
 
+
+        <!-- ########################################## modais da pagina principal ######################-->
         <!--modal do contato enviando e mail-->
         <div id="modal-carregando-msg" class="modal">
 
             <div class="container">
                 <div>
-                    <h3 class="grey-text text-darken-3 font-baloo center">Aguarde</h3>
+                    <h3 class="grey-text text-darken-3 font-baloo center">Enviando Mensagem</h3>
                 </div>
                 <div class="progress">
                     <div class="indeterminate"></div>
@@ -360,6 +365,112 @@
             </div>
         </div>
         <!--fim do modal carregando enviar e mail-->
+
+
+        <!--modal do card  servico suporte-->
+        <div id="modal-servico-suporte" class="modal">
+
+            <div class="container">
+                <div>
+                    <h3 class="grey-text text-darken-3 font-baloo center">Suporte Técnico</h3>
+                </div>
+                Entre em contato conosco e conheça nossos planos para prestação de suporte Técnico especializado para sua empresa. Atendemos de forma pratica e rapida para determinados tipos de inconvenientes que a tecnologia que tanto facilita nossa vida venha a nos trazer.
+                <br />
+                Muitas e muitas vezes precisamos de um auxilio em determinada ação ou manutenção emergencial em algum tipo de tecnologia que utilizamos, A Nova Lógica disponibiliza varios serviços tecnicos nesse sentido, facilitando assim a sua vida.<br />
+                De formatar um computador até upgrade troca de peças instalações de impressoras, serviços diversos, dentre os que se incluem na area de suporte Técnico, nos enquadramos envie nos uma mensagem entrando no menu <a href="#contato">contato</a> ou entre em contato conos pelos canais disponiveis, teremos prazer em atende-lo
+            </div>
+        </div>
+        <!--fim do modal servico suporte-->
+
+
+
+        <!--modal do card  servico redes -->
+        <div id="modal-servico-redes" class="modal">
+
+            <div class="container">
+                <div>
+                    <h3 class="grey-text text-darken-3 font-baloo center">Redes de computadores</h3>
+                </div>
+                Caso esteja precisando reformular a maneira com que sua rede esta instalada/configurada, fornecemos serviços diversos nessa area tais como:
+                <ul class="collection">
+                    <li class="collection-item">Projetos de redes residenciais e empresariais</li>
+                    <li class="collection-item"> Configuração de servidores linux/Windows</li>
+                    <li class="collection-item">Cabeamento estruturado</li>
+                    <li class="collection-item">Links ponto a ponto e ponto a multiponto Wireless</li>
+                    <li class="collection-item">Hotspots empresariais e wi-fi publicos</li>
+                    <li class="collection-item">Controle de banda e de usuarios</li>
+                    <li class="collection-item">Consultoria sobre tecnologias e melhorias de redes</li>
+                </ul>
+                <p>Estamos aguardando pelo seu <a href="#contato">contato</a> para orçamento ou conhecer um pouco mais sobre nós</p>
+            </div>
+        </div>
+        <!--fim do modal servico redes-->
+
+
+        <!--modal do card  servico marketing -->
+        <div id="modal-servico-marketing" class="modal">
+
+            <div class="container">
+                <div>
+                    <h3 class="grey-text text-darken-3 font-baloo center">Marketing Digital</h3>
+                </div>
+                Precisa alavancar sua empresa ou realizar um Marketing Pessoal, podemos fornecer alguns serviços na área, utilizando se da tecnologia trabalhamos com marketing digital, implementando soluções em artes visuais e divulgações em redes sociais, nossos serviços incluem audio de rua panfletagem etc... consulte nos e peça seu orçamento.
+            </div>
+        </div>
+        <!--fim do modal servico marketing-->
+
+
+        <!--modal do card  servico monitoramento -->
+        <div id="modal-servico-monitoramento" class="modal">
+
+            <div class="container">
+                <div>
+                    <h3 class="grey-text text-darken-3 font-baloo center">Sistemas de segurança e Monitoramento </h3>
+                </div>
+                <p>Fornecemos serviços de instalação de equipamentos de segurança como Câmeras e alarmes, aos quais apos solicitar orçamento receberá uma visita de um técnico para que seja feito um levantamento a orçamento, trabalhamos tanto para areas empresariais como areas residenciais, procuramos instalar equipamentos de qualidade posi nos propomos a manter o suporte tecnico enquanto o cliente o desejar</p>
+            </div>
+        </div>
+        <!--fim do modal servico monitoramento-->
+
+
+        <!--modal do card musical  -->
+        <div id="modal-servico-musical" class="modal">
+
+            <div class="container">
+                <div>
+                    <h3 class="grey-text text-darken-3 font-baloo center">Produção Musical/Sonorização</h3>
+                </div>
+                Fornecemos serviços na area artistica também para eventos tais como:
+                <ul class="collection">
+                    <li class="collection-item">DJs para festas em geral </li>
+                    <li class="collection-item">Banda para Baile estilo gaucho/sertanejo</li>
+                    <li class="collection-item">Dupla musicas estilo sertanejas</li>
+                    <li class="collection-item">Sonorização de eventos para Banda, DJ ou Dupla</li>
+                    <li class="collection-item">Produção de vinhetas, jingles e audios em geral</li>
+                </ul>
+                <p>Aguardamos seu <a href="#contato">contato</a> para realizarmos um orçamento</p>
+            </div>
+        </div>
+        <!--fim do modal servico musical-->
+
+        <!--modal do card  servico assessoria Eventos -->
+        <div id="modal-servico-eventos" class="modal">
+
+            <div class="container">
+                <div>
+                    <h3 class="grey-text text-darken-3 font-baloo center">Assessoria em Eventos </h3>
+                </div>
+                <p>Fornecemos assessoria para os mais variados tipos de Eventos desde bailes a festas de aniversario em geral, ajudamos a organizar para que o evento não tenha imprevistos e nem problemas quanto a legislação ou até mesmo a respeito de detalhes esquecidos, sempre visando proporcionar o lucro e a economia para que sua festa não se torne um pesadelo ou uma gáfe </p>
+            </div>
+        </div>
+        <!--fim do modal servico eventos-->
+
+
+
+
+
+
+
 
 
 
@@ -402,7 +513,7 @@
     <!-- <script src="assets/libraries/materialize/js/materialize.min.js"></script>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="assets/resources/scripts/index.js"></script>
-    <script src="assets/resources/scripts/validacoesFormContato.js"></script>
+    <script src="assets/resources/scripts/logicadoindex.js"></script>
 </body>
 
 </html>

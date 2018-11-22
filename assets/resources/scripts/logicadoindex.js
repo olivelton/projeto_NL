@@ -75,6 +75,63 @@
 
 
 
+    /*tratamento dos links dos cards de serviço*/
+
+    //evento modal card suporte tecnico
+    document.getElementById('saibamais-suporte').addEventListener('click', function () {
+        let modalCarregando = $('modal-servico-suporte')
+        var instance = M.Modal.getInstance(modalCarregando);
+        instance.open();
+
+    });
+
+    // evento modal card redes
+    document.getElementById('saibamais-redes').addEventListener('click', function () {
+        let modalCarregando = $('modal-servico-redes')
+        var instance = M.Modal.getInstance(modalCarregando);
+        instance.open();
+
+    });
+
+    //evento modal card marketing
+    document.getElementById('saibamais-marketing').addEventListener('click', function () {
+        let modalCarregando = $('modal-servico-marketing')
+        var instance = M.Modal.getInstance(modalCarregando);
+        instance.open();
+
+    });
+
+
+    //evento modal card monitoramento
+
+    document.getElementById('saibamais-musical').addEventListener('click', function () {
+        let modalCarregando = $('modal-servico-musical')
+        var instance = M.Modal.getInstance(modalCarregando);
+        instance.open();
+
+    });
+
+
+    // evento modal card musical 
+
+    document.getElementById('saibamais-eventos').addEventListener('click', function () {
+        let modalCarregando = $('modal-servico-eventos')
+        var instance = M.Modal.getInstance(modalCarregando);
+        instance.open();
+
+    });
+
+
+    //evento modal card asseoria eventos
+    document.getElementById('saibamais-monitoramento').addEventListener('click', function () {
+        let modalCarregando = $('modal-servico-monitoramento')
+        var instance = M.Modal.getInstance(modalCarregando);
+        instance.open();
+
+    });
+
+
+    /* fim tratamento dos links dos cards de serviço*/
 
 
 })();

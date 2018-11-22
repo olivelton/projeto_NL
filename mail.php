@@ -6,12 +6,12 @@ $Mensagem	= $_POST["textarea-contato"];	// Pega os valores do campo Mensagem
 $Retorno    = $_POST["input-contato-retorno"];
 // Variável que junta os valores acima e monta o corpo do email
 
-$Vai 		= "Nome: $Nome\n\nE-mail: $Email\n\ncontato de retorno: $Retorno\n\nMensagem: $Mensagem\n";
+$Vai 		= "Nome: $Nome \n\ncontato de retorno: $Retorno\n\nMensagem:\n\n $Mensagem\n";
 
 require_once("phpmailer/class.phpmailer.php");
 
 define('GUSER', 'olivelton00@gmail.com');	// <-- Insira aqui o seu GMail
-define('GPWD', 'senha do E mail aqui ');		// <-- Insira aqui a senha do seu GMail
+define('GPWD', 'senhadoemailaqui');		// <-- Insira aqui a senha do seu GMail
 
 function smtpmailer($para, $de, $de_nome, $assunto, $corpo) { 
 	global $error;
