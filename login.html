@@ -46,7 +46,7 @@
         <div class="container">
             <div class="row">
                 <div class="col s12 m8 offset-m2">
-                    <form class="login-form">
+                    <form class="login-form" name="form-login">
                         <div class="card">
                             <div class="card-image">
                                 <img src="assets/resources/images/login-image.jpg">
@@ -57,16 +57,21 @@
                             </div>
                             <div class="card-content">
                                 <div class="input-field">
-                                    <input class="validate" id="email" type="email" autofocus>
-                                    <label for="email" class="blue-text text-darken-4 font-baloo ">Email</label>
+                                    <input class="validate" id="input-usuario" type="text" autofocus required>
+                                    <label for="input-usuario" class="blue-text text-darken-4 font-baloo ">Úsuario</label>
+                                    <div id="alerta-usuario" class="red-text " hidden>
+                                        <p>Úsuario invalido</p>
+                                    </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col s12 m12 l12">
                                         <div class="input-field">
-                                            <input id="password" type="password" />
-                                            <label for="password" class="blue-text text-darken-4 font-baloo ">Senha</label>
-
+                                            <input id="input-senha" type="password" required />
+                                            <label for="input-senha" class="blue-text text-darken-4 font-baloo ">Senha</label>
+                                            <div id="alerta-senha" class="red-text " hidden>
+                                                <p>Senha Inválida </p>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -74,7 +79,7 @@
                             </div>
                             <div class="card-action blue-grey lighten-3">
                                 <div class="center-align">
-                                    <a href="login.html" class="btn blue darken-1"><i class="material-icons left">vpn_key</i>Acessar</a>
+                                    <button href="login.html" class="btn blue darken-1"><i class="material-icons left">vpn_key</i>Acessar</button>
                                 </div>
                             </div>
                         </div>
@@ -94,20 +99,26 @@
 
         <!--modal recuperar senha-->
         <!-- Modal Structure -->
-        <div id="modal1" class="modal">
+        <div id="modal-solicita-senha" class="modal">
 
             <div class="container">
                 <div>
                     <h3 class="grey-text text-darken-3 font-baloo center">Esqueci a senha</h3>
                 </div>
                 <div class="row">
-                    <form class="col s12" action=" return onsubmit()">
-                        <h4 class="black-text text-lighten-1 font-baloo"> Entre com o E mail cadastrado</h4>
+                    <form id="nova-senha" class="col s12">
+                        <h4 class="black-text text-lighten-1 font-baloo"> Entre com o E mail e nome cadastrado</h4>
                         <!-- entrada de e-mail-->
                         <div class="row">
                             <div class="input-field col s12 m12">
-                                <input id="email-solcita-senha" type="email" class="validate" autofocus>
-                                <label for="email-solicita-senha" class="black-text text-lighten-1 font-baloo">Email</label>
+                                <input id="nome-senha" type="text" class="validate" autofocus required>
+                                <label for="nome-solicita-senha" class="black-text text-lighten-1 font-baloo">Nome</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m12">
+                                <input id="email-senha" type="email" class="validate" autofocus required>
+                                <label for="email-senha" class="black-text text-lighten-1 font-baloo">Email</label>
                             </div>
                         </div>
                         <div class="row">
@@ -121,18 +132,7 @@
                 </div>
             </div>
 
-
-            <div id="div-solicita-senha" class="container ">
-                <p class="red-text text-lighten-1 font-baloo hide">
-                    Senha solicitada com sucesso verifique seu e E-Mail e siga os passos la indicados
-                </p>
-            </div>
         </div>
-        <!--modal recuperar senha-->
-
-
-
-
 
     </main>
 
@@ -149,6 +149,7 @@
     <!-- <script src="assets/libraries/materialize/js/materialize.min.js"></script>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="assets/resources/scripts/index.js"></script>
+    <script src="assets/resources/scripts/logicaLogin.js"></script>
 
 
 </body>

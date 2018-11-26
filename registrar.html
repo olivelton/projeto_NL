@@ -60,7 +60,7 @@
                             <label for="input-nome" class="black-text text-lighten-1 font-baloo">Nome</label>
                         </div>
                         <div class="input-field col s12 m6">
-                            <input id="input-sobrenome" type="text" class="validate">
+                            <input id="input-sobrenome" type="text" class="validate" required>
                             <label for="input-sobrenome" class="black-text text-lighten-1 font-baloo">Sobrenome</label>
                         </div>
                     </div>
@@ -82,10 +82,6 @@
                                 <span class="black-text text-lighten-1 font-baloo">Feminino</span>
                             </label>
 
-                            <label>
-                                <input class="with-gap" name="sexo" type="radio" value="O" />
-                                <span class="black-text text-lighten-1 font-baloo">Outro</span>
-                            </label>
 
                         </div>
                     </div>
@@ -100,12 +96,17 @@
                         <div class="input-field col s12 m6">
                             <input id="input-senha" type="password" class="validate">
                             <label for="input-senha" class="black-text text-lighten-1 font-baloo">Senha</label>
-
+                            <div id="alerta-confirma-senha" class="red-text" hidden>
+                                <p>Senha e confirmação de senha não confere</p>
+                            </div>
                         </div>
 
                         <div class="input-field col s12 m6">
                             <input id="input-senha-confirma" type="password">
                             <label id="lbl-senha-confirma" for="input-senha-confirma" data-error="Password not match" data-success="Password Match" class="black-text text-lighten-1 font-baloo">Confirmação da senha</label>
+                            <div id="alerta-confirma-senha1" class="red-text" hidden>
+                                <p>Senha e confirmação de senha não confere</p>
+                            </div>
                         </div>
                     </div>
                     <!-- dados pessoais-->
@@ -118,17 +119,17 @@
 
                     <div class="row">
                         <div class="input-field col s12 m6">
-                            <input id="input-Rua" type="text" class="validate">
-                            <label for="input-Rua" class="black-text text-lighten-1 font-baloo">Rua</label>
+                            <input id="input-rua" type="text" class="validate">
+                            <label for="input-rua" class="black-text text-lighten-1 font-baloo">Rua</label>
                         </div>
 
                         <div>
-                            <div class="s12 m6">
+                            <div class="s12 m6 center-align">
                                 <label>
-                                    <input type="checkbox" />
+                                    <input id="input-checkbox" type="checkbox" />
                                     <span class="black-text text-lighten-1 font-baloo">S/N</span>
                                 </label>
-                                <div class="input-field col s3 m3 ">
+                                <div id="div-numero" class="input-field col s3 m3 ">
                                     <input id="input-numero" type="number" class="validate ">
                                     <label class="black-text text-lighten-1 font-baloo " for="input-numero">numero</label>
                                 </div>

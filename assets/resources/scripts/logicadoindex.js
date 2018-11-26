@@ -3,6 +3,10 @@
         return document.getElementById(id);
     }
 
+
+
+
+
     /*validação do formulario de mensagem na ancora contato do index
      */
 
@@ -10,6 +14,22 @@
     let mensagem = $('textarea-contato');
     let nome = $('input-nome-contato');
     let contatoRetorno = $('input-contato-retorno');
+    let displayNome = $('display-nome');
+
+
+
+    /*evento de carregamento da pagina pedindo o nome do leitor 
+     */
+    let leitor;
+    window.addEventListener('load', () => {
+        leitor = prompt('Seja bem vindo \n Qual seu nome?');
+        if (leitor) {
+            displayNome.innerHTML = 'Olá! ' + leitor;
+            displayNome.classList.remove('hide');
+        }
+        //adiciona o nome ao campo nome do formulario contato 
+        nome.value = leitor;
+    });
 
     //verifica se os inputs estao vazios para habilitar ou não 
     function habilitaEnviar() {

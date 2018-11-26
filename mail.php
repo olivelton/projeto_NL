@@ -44,7 +44,7 @@ function smtpmailer($para, $de, $de_nome, $assunto, $corpo) {
 // Insira abaixo o email que irá receber a mensagem, o email que irá enviar (o mesmo da variável GUSER), 
 //o nome do email que envia a mensagem, o Assunto da mensagem e por último a variável com o corpo do email.
 
- if (smtpmailer('olivelton00@gmail.com', 'olivelton00@gmail.com', 'Site Nova Logica', 'contato via site', $Vai)) {
+ if (smtpmailer('olivelton00@gmail.com', 'olivelton00@gmail.com.com', 'Site Nova Logica', 'contato via site', $Vai)) {
 echo "<script> 
     alert('Mensagem enviada com Sucesso');
     window.location.href = 'index.html#contato';
