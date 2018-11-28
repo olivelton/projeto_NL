@@ -106,56 +106,87 @@ inputCpf.addEventListener('keypress', function (e) {
 });
 
 
+//tratando do cep
+inputCep.keypress(function (e) {
+
+    if (e.keyCode < 45 || e.keyCode > 57 || e.keyCode == 47 || e.keyCode == 46) {
+        alert('digito não valido somente numero e - são aceitos ');
+        e.preventDefault();
+
+    }
+
+    if (inputCep.val().length == 5) {
+        inputCep.val(inputCep.val() + '-');
+    }
+
+
+});
+
 //tratamento para pegar numero ou s/n
 function pegaNumero() {
     if ($('input:checked').val()) {
         $('#div-numero').fadeOut('slow');
 
         return 's/n';
-    } else {
+    }
+    if (!$('input:checked').val()) {
         $('#div-numero').fadeIn('slow');
         return inputNumero.val();
     }
-    return 's/n';
+
 }
 //evento de clique no checkbox esconde campo numero 
 inputCheckbox.click(pegaNumero);
 
 function pegaSexo() {
+    let marcado = $('[name=sexo]:checked').val();
 
-    return 'm';
+    return marcado;
 }
 
 function pegaEstado() {
-    return 'PR';
+
+    return $('select option:selected').val();
 }
 
-/* teste recuperar json
-let aaa = JSON.parse(localStorage.getItem('Olivelton'));
-console.log(aaa);
-console.log(typeof (aaa));
-console.log(aaa.nome);
-*/
+
 function valida() {
+    //verifica se foi marcado opção de sexo 
+    if ($('[name=sexo]:checked').val() == undefined) {
+        alert('favor marque qual sexo é?');
+        return false;
+    }
+
+    //verifica se foi marcado estado 
+    if (pegaEstado() == '') {
+        alert('Por favor selecione um estado');
+        return false;
+    }
+
+    //verificando as senhas antes de enviar 
     if (!verificarSenha()) {
         alert('senhas não conferem');
         return false;
-    } else {
-
-
-        if (!localStorage.getItem($('#input-nome').val())) {
-            localStorage.setItem(inputNome.val(), JSON.stringify(new ClassCliente(inputNome.val(), inputSobrenome.val(), inputCpf.value, pegaSexo(), inputEmail.val(), senha.val(), inputRua.val(), pegaNumero(), inputCidade.val(), pegaEstado(), inputCep.val())));
-
-            alert('Úsuario cadastrado com sucesso \nPara Acessar o portal entre com o nome e a senha');
-
-
-            return false;
-        } else {
-            alert('usuario ja cadastrado');
-            return false;
-        }
-
     }
+
+
+
+
+    //verifica se usuario ja foi cadastrado ou não
+    if (!localStorage.getItem($('#input-nome').val())) {
+
+        localStorage.setItem(inputNome.val(), JSON.stringify(new ClassCliente(inputNome.val(), inputSobrenome.val(), inputCpf.value, pegaSexo(), inputEmail.val(), senha.val(), inputRua.val(), pegaNumero(), inputCidade.val(), pegaEstado(), inputCep.val())));
+
+        alert('Úsuario cadastrado com sucesso \nPara Acessar o portal entre com o nome e a senha');
+
+
+        return false;
+    } else {
+        alert('usuario ja cadastrado');
+        return false;
+    }
+
+
     return false;
 
 

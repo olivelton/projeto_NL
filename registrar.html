@@ -143,9 +143,10 @@
                             <label for="input-cidade" class="black-text text-lighten-1 font-baloo">Cidade</label>
                         </div>
 
-                        <div class="input-field col s12 m6">
+                        <div class=" white input-field col s12 m4">
+
                             <select>
-                                <option value="" disabled selected>Selecione o Estado</option>
+                                <option value="" selected>Selecione o Estado</option>
                                 <option value="ac">Acre</option>
                                 <option value="al">Alagoas</option>
                                 <option value="am">Amazonas</option>
@@ -174,14 +175,14 @@
                                 <option value="sp">São Paulo</option>
                                 <option value="to">Tocantins</option>
                             </select>
-                            <label class="black-text text-lighten-1 font-baloo">UF</label>
+
                         </div>
                     </div>
 
 
                     <div class="row">
                         <div class="input-field col s12 m6">
-                            <input id="input-cep" type="number" maxlength="8" class="validate">
+                            <input id="input-cep" type="text" maxlength="9" pattern="\d{5}[-]\d{3}$" class="validate">
                             <label for="input-cep" class="black-text text-lighten-1 font-baloo">CEP</label>
 
                         </div>
@@ -217,6 +218,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="assets/libraries/materialize/js/materialize.min.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>-->
+    <script src="assets/resources/scripts/index.js"></script>
+
     <script src="assets/resources/scripts/logicadoregistrar.js"></script>
 </body>
 
