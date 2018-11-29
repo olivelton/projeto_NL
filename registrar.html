@@ -27,6 +27,9 @@
                     <li><a href="index.html#servicos" class=" blue-text text-darken-3 font-baloo">Serviços</a></li>
                     <li><a href="index.html#contato" class=" blue-text text-darken-3 font-baloo">contato</a></li>
                     <li><a href="login.html" class=" blue-text text-darken-3 font-baloo">Area do Cliente</a></li>
+                    <li>
+                        <p id="display-nome" class=" black-text text-darken-3 font-baloo hide">
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -56,8 +59,9 @@
                     <!-- dados pessoais-->
                     <div class="row">
                         <div class="input-field col s12 m6">
-                            <input id="input-nome" type="text" class="validate" autofocus required>
+                            <input id="input-nome" name="nome-usuario" type="text" class="validate" required>
                             <label for="input-nome" class="black-text text-lighten-1 font-baloo">Nome</label>
+                            <p id="pdica" class="yellow-text" hidden> Cuide as letras maiusculas fazem diferença para logar</p>
                         </div>
                         <div class="input-field col s12 m6">
                             <input id="input-sobrenome" type="text" class="validate" required>
@@ -96,7 +100,7 @@
                         <div class="input-field col s12 m6">
                             <input id="input-senha" type="password" class="validate">
                             <label for="input-senha" class="black-text text-lighten-1 font-baloo">Senha</label>
-                            <div id="alerta-confirma-senha" class="red-text" hidden>
+                            <div id="confirma-senha" class="red-text" hidden>
                                 <p>Senha e confirmação de senha não confere</p>
                             </div>
                         </div>
@@ -104,7 +108,7 @@
                         <div class="input-field col s12 m6">
                             <input id="input-senha-confirma" type="password">
                             <label id="lbl-senha-confirma" for="input-senha-confirma" data-error="Password not match" data-success="Password Match" class="black-text text-lighten-1 font-baloo">Confirmação da senha</label>
-                            <div id="alerta-confirma-senha1" class="red-text" hidden>
+                            <div id="confirma-senha1" class="red-text" hidden>
                                 <p>Senha e confirmação de senha não confere</p>
                             </div>
                         </div>
@@ -203,8 +207,31 @@
                     </div>
 
                 </form>
+
             </div>
+            <div class="row">
+                <div class="row center">
+                    <h4>Úsuario registrado nessa seção</h4>
+                </div>
+
+                <table class="responsive-table centered highlight white">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Sobrenome</th>
+                            <th>Sexo</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="row"></div>
         </div>
+
     </main>
 
     <!-- footer -->

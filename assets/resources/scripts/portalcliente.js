@@ -19,6 +19,10 @@
 
         }
 
+
+
+
+
     });
 
 
@@ -44,7 +48,8 @@
 
         } else {
             $('body').html('<center><h1> Sessão terminada!!</h1><\center>');
-
+            localStorage.removeItem('userAtivo');
+            //localStorage.removeItem('chave');
             window.setTimeout(function () {
                 window.location.href = 'login.html';
             }, 5000);
@@ -57,11 +62,13 @@
     }, 1000);
 
 
-
     $('h3').html('Seja Bem Vindo ' + usuarioAtivo);
 
     let cliente = JSON.parse(localStorage.getItem(usuarioAtivo));
+    console.log(usuarioAtivo);
+
     console.log(cliente);
+
     $('#mostra-nome').val(cliente.nome);
     $('#mostra-sobrenome').val(cliente.sobrenome);
     $('#mostra-cpf').val(cliente.cpf);

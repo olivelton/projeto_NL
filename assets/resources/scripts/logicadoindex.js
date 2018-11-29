@@ -3,10 +3,6 @@
         return document.getElementById(id);
     }
 
-
-
-
-
     /*validação do formulario de mensagem na ancora contato do index
      */
 
@@ -16,19 +12,44 @@
     let contatoRetorno = $('input-contato-retorno');
     let displayNome = $('display-nome');
 
-
-
     /*evento de carregamento da pagina pedindo o nome do leitor 
      */
     let leitor;
     window.addEventListener('load', () => {
-        leitor = prompt('Seja bem vindo \n Qual seu nome?');
+        if (!localStorage.getItem('userAtivo')) {
+            leitor = prompt('Seja bem vindo \n Qual seu nome?');
+        } else {
+            leitor = localStorage.getItem('userAtivo');
+
+        }
+
         if (leitor) {
             displayNome.innerHTML = 'Olá! ' + leitor;
             displayNome.classList.remove('hide');
         }
         //adiciona o nome ao campo nome do formulario contato 
         nome.value = leitor;
+
+        let tempoOnline = 0;
+        let usuarioAtivo = localStorage.getItem('userAtivo');
+        tempoOnline = parseInt(localStorage.getItem('chave'));
+        let key = setInterval(() => {
+            if (tempoOnline > 0) {
+                tempoOnline += -1000;
+                localStorage.setItem('chave', tempoOnline);
+            } else {
+                localStorage.removeItem('userAtivo');
+                //localStorage.removeItem('chave');
+                window.setTimeout(function () {
+                    //  window.location.href = 'login.html';
+                }, 5000);
+            }
+            if (tempoOnline == -4000) {
+                clearInterval(key);
+            }
+
+        }, 1000);
+
     });
 
     //verifica se os inputs estao vazios para habilitar ou não 

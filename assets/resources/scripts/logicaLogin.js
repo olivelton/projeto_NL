@@ -1,11 +1,59 @@
 (function () {
 
 
-    $("#clickme").click(function () {
-        $("#book").fadeIn("slow", function () {
-            // Animation complete
-        });
+    let displayNome = document.getElementById('display-nome');
+
+
+
+    /*evento de carregamento da pagina pedindo o nome do leitor 
+     */
+    let leitor = '';
+    window.addEventListener('load', () => {
+        if (!localStorage.getItem('userAtivo')) {
+            // leitor = prompt('Seja bem vindo \n Qual seu nome?');
+        } else {
+            leitor = localStorage.getItem('userAtivo');
+
+        }
+
+        if (leitor) {
+            displayNome.innerHTML = 'Olá! ' + leitor;
+            displayNome.classList.remove('hide');
+        }
+        //adiciona o nome ao campo nome do formulario contato 
+
     });
+
+    let tempoOnline = 0;
+    let usuarioAtivo = localStorage.getItem('userAtivo');
+    tempoOnline = parseInt(localStorage.getItem('chave'));
+
+
+    let key = setInterval(() => {
+        if (tempoOnline > 0) {
+            tempoOnline += -1000;
+            localStorage.setItem('chave', tempoOnline);
+
+
+
+
+        } else {
+
+            localStorage.removeItem('userAtivo');
+            //localStorage.removeItem('chave');
+            window.setTimeout(function () {
+                // window.location.href = 'login.html';
+            }, 5000);
+        }
+
+        if (tempoOnline == -4000) {
+            clearInterval(key);
+        }
+
+    }, 1000);
+
+
+
 
 
     document.getElementById('input-usuario').addEventListener('invalid', () => {
@@ -97,7 +145,7 @@
 
         if (validaUsuario($('#input-usuario').val(), $('#input-senha').val())) {
 
-            localStorage.setItem('chave', '600000');
+            localStorage.setItem('chave', '60000' /*'600000'*/ );
             localStorage.setItem('userAtivo', $('#input-usuario').val());
             window.location.href = 'portalcliente.html';
             // return false;

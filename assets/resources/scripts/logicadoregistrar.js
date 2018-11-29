@@ -1,10 +1,62 @@
 //ao carregar a pagina muda a cor de fundo de todos os inputs
 window.onload = function () {
 
+    let displayNome = document.getElementById('display-nome');
+
+
+
+    /*evento de carregamento da pagina pedindo o nome do leitor 
+     */
+
+
+
+
+
+
+
     let listaInputs = document.querySelectorAll('input');
     for (let i = 0; i < listaInputs.length; i++) {
         listaInputs[i].style.backgroundColor = 'white';
     }
+
+
+
+    let leitor = '';
+
+    if (!localStorage.getItem('userAtivo')) {
+        // leitor = prompt('Seja bem vindo \n Qual seu nome?');
+    } else {
+        leitor = localStorage.getItem('userAtivo');
+
+    }
+
+    if (leitor) {
+        displayNome.innerHTML = 'Olá! ' + leitor;
+        displayNome.classList.remove('hide');
+    }
+
+
+
+    let tempoOnline = 0;
+    let usuarioAtivo = localStorage.getItem('userAtivo');
+    tempoOnline = parseInt(localStorage.getItem('chave'));
+    let key = setInterval(() => {
+        if (tempoOnline > 0) {
+            tempoOnline += -1000;
+            localStorage.setItem('chave', tempoOnline);
+        } else {
+            localStorage.removeItem('userAtivo');
+            //localStorage.removeItem('chave');
+            window.setTimeout(function () {
+                //  window.location.href = 'login.html';
+            }, 5000);
+        }
+        if (tempoOnline == -4000) {
+            clearInterval(key);
+        }
+
+    }, 1000);
+
 
 };
 
@@ -13,6 +65,7 @@ window.onload = function () {
     return document.getElementById(id);
 }
 */
+let stri = "";
 let inputNome = $('#input-nome');
 let inputSobrenome = $('#input-sobrenome');
 let inputCpf = document.getElementById('input-cpf');
@@ -37,7 +90,7 @@ let ClassCliente = function (nome, sobrenome, cpf, sexo, mail, senha, rua, numer
     this.estado = estado;
     this.cep = cep;
 }
-
+let bdUser = [];
 
 
 $('a').click((evento) => {
@@ -50,19 +103,29 @@ $('a').click((evento) => {
     }
 });
 
+let name = document.getElementsByName('nome-usuario')[0];
+console.log(name);
+name.onfocus = function () {
+    $('#pdica').slideDown('slow');
+};
+name.onblur = function () {
+    $('#pdica').slideUp('slow');
+}
+
+
 function verificarSenha() {
     let verificador = false;
     if (senha.val() == confirmaSenha.val()) {
         confirmaSenha.removeClass('invalid');
         senha.removeClass('invalid');
-        $('#alerta-confirma-senha').fadeOut('slow');
-        $('#alerta-confirma-senha1').fadeOut('slow');
+        $('#confirma-senha').fadeOut('slow');
+        $('#confirma-senha1').fadeOut('slow');
         verificador = true;
     } else {
         confirmaSenha.addClass('invalid');
         senha.addClass('invalid');
-        $('#alerta-confirma-senha').fadeIn('slow');
-        $('#alerta-confirma-senha1').fadeIn('slow');
+        $('#confirma-senha').fadeIn('slow');
+        $('#confirma-senha1').fadeIn('slow');
         verificador = false;
 
     }
@@ -73,13 +136,19 @@ function verificarSenha() {
 confirmaSenha.focusout(() => {
     verificarSenha();
 });
-
+/*
 senha.focusout(() => {
     if (confirmaSenha.val()) {
         verificarSenha();
     }
-})
+});
+*/
+document.getElementById('input-senha').onblur = function () {
 
+    if (confirmaSenha.val()) {
+        verificarSenha();
+    }
+};
 
 inputCpf.addEventListener('keypress', function (e) {
 
@@ -172,12 +241,23 @@ function valida() {
 
 
 
+
+
     //verifica se usuario ja foi cadastrado ou não
     if (!localStorage.getItem($('#input-nome').val())) {
 
-        localStorage.setItem(inputNome.val(), JSON.stringify(new ClassCliente(inputNome.val(), inputSobrenome.val(), inputCpf.value, pegaSexo(), inputEmail.val(), senha.val(), inputRua.val(), pegaNumero(), inputCidade.val(), pegaEstado(), inputCep.val())));
+        let novoUser = new ClassCliente(inputNome.val(), inputSobrenome.val(), inputCpf.value, pegaSexo(), inputEmail.val(), senha.val(), inputRua.val(), pegaNumero(), inputCidade.val(), pegaEstado(), inputCep.val());
+
+        localStorage.setItem(inputNome.val(), JSON.stringify(novoUser));
 
         alert('Úsuario cadastrado com sucesso \nPara Acessar o portal entre com o nome e a senha');
+        bdUser.push(novoUser);
+
+
+        stri += " <tr><td>" + novoUser.nome + "</td><td>" + novoUser.sobrenome + "</td><td>" + novoUser.sexo + "</td></tr>";
+        console.log(stri);
+        $('tbody').html(stri);
+
 
 
         return false;
